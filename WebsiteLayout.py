@@ -63,7 +63,7 @@ with st.container():
     with col2:
         st.markdown('<div class="sidebar">', unsafe_allow_html=True)
         st.subheader("Params for Bot")
-        st.write("Place parameters or controls here for bot functionality.")
+        st.write("Parameters or controls here for bot functionality.")
         st.markdown('</div>', unsafe_allow_html=True)
 
 
