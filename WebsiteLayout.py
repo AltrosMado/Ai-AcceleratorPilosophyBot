@@ -13,7 +13,7 @@ st.markdown("""
     /* Main styles */
     .main {
         background-color: #2d2d4f; /* Midnight Purple */
-        color: #ffffff;
+        color: #2d2d4f;
     }
 
     /* Header styling */
