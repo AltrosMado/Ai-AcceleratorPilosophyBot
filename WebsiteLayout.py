@@ -1,10 +1,10 @@
 import streamlit as st
 
-# page configuration
+# Page configuration
 st.set_page_config(
     page_title="Website Blueprint",
     layout="wide",
-    initial_sidebar_state="expanded"
+    initial_sidebar_state="collapsed"  # The sidebar 
 )
 
 # Styling 
@@ -13,7 +13,7 @@ st.markdown("""
     /* Main styles */
     .main {
         background-color: #2d2d4f; /* Midnight Purple */
-        color: #2d2d4f;
+        color: #ffffff;
     }
 
     /* Header styling */
@@ -33,6 +33,7 @@ st.markdown("""
         border-radius: 8px;
         padding: 1rem;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        margin-bottom: 1rem;
     }
 
     /* Sidebar content */
@@ -45,25 +46,36 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
+# Parameters set 
+params = {
+    "bot_name": "StreamlitBot",
+    "model": "GPT-4",
+    "theme": "Midnight Purple",
+    "debug_mode": False
+}
+
 # Page header
 st.markdown('<header><h1>Normal Header</h1></header>', unsafe_allow_html=True)
 
 # Main layout 
 with st.container():
-    col1, col2 = st.columns([3, 1])  # the column ratio
+    col1, col2 = st.columns([3, 1])  # The column ratio
 
     # Main content (section)
     with col1:
         st.markdown('<div class="content">', unsafe_allow_html=True)
         st.subheader("Main Interaction Point")
-        st.write("This is where the main content or interaction will occur.")
+        st.write("""
+            This is the central section where primary interaction will take place.
+        """)
         st.markdown('</div>', unsafe_allow_html=True)
 
     # Sidebar content (aside)
     with col2:
         st.markdown('<div class="sidebar">', unsafe_allow_html=True)
-        st.subheader("Params for Bot")
-        st.write("Parameters or controls here for bot functionality.")
+        st.subheader("Info Panel")
+        st.write(f"Bot Name: **{params['bot_name']}**")
+        st.write(f"Model: **{params['model']}**")
+        st.write(f"Theme: **{params['theme']}**")
+        st.write(f"Debug Mode: **{'Enabled' if params['debug_mode'] else 'Disabled'}**")
         st.markdown('</div>', unsafe_allow_html=True)
-
-
