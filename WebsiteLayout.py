@@ -68,6 +68,7 @@ with st.container():
         # Chatbox
         st.markdown('<div class="chat-container">', unsafe_allow_html=True)
 
+        # Initialize chat history if not already in session state
         if "chat_history" not in st.session_state:
             st.session_state.chat_history = []
 
@@ -83,9 +84,14 @@ with st.container():
         user_input = st.text_input("Your Question:", key="user_input")
         if st.button("Send"):
             if user_input.strip():
+                # Add the user's message to chat history
                 st.session_state.chat_history.append(("user", user_input))
-                # Placeholder for bot response
-                st.session_state.chat_history.append(("bot", "Response from the Philosophy Bot will appear here."))
+
+                # Placeholder bot response
+                bot_response = "Response from the Philosophy Bot will appear here."
+
+                # Add the bot's response to chat history
+                st.session_state.chat_history.append(("bot", bot_response))
             else:
                 st.error("Please enter a question before sending.")
         
@@ -101,4 +107,3 @@ with st.container():
         st.write("Developer: Team 24")
         st.write("Status: Ready")
         st.markdown('</div>', unsafe_allow_html=True)
-
