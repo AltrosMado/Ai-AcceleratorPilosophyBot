@@ -103,14 +103,6 @@ with st.container():
                 st.session_state.chat_history.append(("bot", bot_response))
             else:
                 st.error("Please enter a question before sending.")
-
-        
-        # Display chat history
-        for role, message in st.session_state.chat_history:
-            if role == "user":
-                st.write(f"**You:** {message}")
-            else:
-                st.write(f"**Philosophy Bot:** {message}")
         
         st.markdown('</div>', unsafe_allow_html=True)
         st.markdown('</div>', unsafe_allow_html=True)
