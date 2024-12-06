@@ -1,11 +1,11 @@
 # Ai-Accelerator Program : Philosophy Chat Bot
 Chatbot made to help students with philosophy made by a group of 3 for fall 2024 
 
-![alt text](image.png)
+![Architecture](images/arch.png)
 
 Local RAG: Ollama + Langchain + Streamlit
 
-![alt text](image-1.png)
+![app](images/streamlit.png)
 
 Set up:
 
