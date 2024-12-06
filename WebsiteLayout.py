@@ -90,7 +90,7 @@ with st.container():
 
                 # Call the Flask API
                 try:
-                    api_url = "https://8b09-34-74-132-85.ngrok-free.app"  # Replace with Flask app URL
+                    api_url = "https://d1c3-34-87-157-52.ngrok-free.app/"  # Replace with Flask app URL
                     response = requests.post(api_url, json={"question": user_input})
                     if response.status_code == 200:
                         bot_response = response.json().get("response", "No response received.")
